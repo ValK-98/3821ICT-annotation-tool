@@ -9,8 +9,7 @@ export default function AboutPage({ setPage }) {
           About Us
         </span>
         <h2 className="text-3xl md:text-5xl font-bold mx-auto max-w-4xl">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bibendum amet
-          at molestie mattis.
+        Cybella.AI was founded with a mission to provide accessible, empathetic mental health support to vulnerable youth. 
         </h2>
       </div>
 

@@ -1,6 +1,6 @@
 import React from "react";
 import ThemeSwitcher from "./ThemeSwitcher";
-import logo from "../assets/thumbnail_image.jpg";
+import logo from "../assets/thumbnail_image.png";
 
 export default function Navbar({ setPage }) {
   return (

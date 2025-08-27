@@ -5,10 +5,10 @@ export default function LandingPage({ setPage }) {
   return (
     <section className="mx-auto max-w-screen-xl flex flex-col items-center py-20 px-4 text-center min-h-[calc(100vh-64px)]">
       <h1 className="text-4xl font-bold leading-tight md:text-5xl">
-        Purus sagittis fringilla arcu neque.
+      A Friend Anytime, Anywhere
       </h1>
       <p className="mt-4 text-base text-muted-foreground md:text-2xl">
-        Bibendum amet at molestie mattis.
+      The Cybell annotation tool is a non-clinical, AI-powered mental health companion designed to support vulnerable and isolated youth.
       </p>
       <div className="mt-8 flex flex-wrap gap-4 justify-center">
         <Button
