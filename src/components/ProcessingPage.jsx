@@ -14,18 +14,19 @@ export default function ProcessingPage({ setPage }) {
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        className="text-gray-300 mb-8"
+        className="text-muted-foreground/40 mb-8"
       >
         <path d="M20 6L9 17l-5-5" strokeWidth="2" />
       </svg>
       <h1 className="text-4xl md:text-5xl font-bold">Thank You</h1>
-      <p className="mt-3 text-2xl md:text-3xl font-semibold text-gray-700">
+      <p className="mt-3 text-2xl md:text-3xl font-semibold text-foreground">
         Video is Processing
       </p>
-      <p className="mt-8 max-w-3xl text-gray-600">
+      <p className="mt-8 max-w-3xl text-muted-foreground">
         Rhoncus morbi et augue nec, in id ullamcorper at sit. Condimentum sit
         nunc in eros scelerisque sed…
       </p>
     </section>
   );
 }
+

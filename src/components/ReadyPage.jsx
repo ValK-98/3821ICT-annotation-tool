@@ -25,7 +25,7 @@ export default function ReadyPage({ setPage }) {
           <h1 className="text-3xl md:text-4xl font-bold">
             Your file is ready!
           </h1>
-          <p className="mt-3 text-gray-600">
+          <p className="mt-3 text-muted-foreground">
             Rhoncus morbi et augue nec, in id ullamcorper at sit.
           </p>
         </div>

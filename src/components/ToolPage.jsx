@@ -21,8 +21,8 @@ export default function ToolPage({ setPage, fileInputRef }) {
       />
       <div className="grid gap-8 w-full md:grid-cols-2">
         {/* Upload card */}
-        <div className="border border-gray-200 rounded-lg shadow-sm bg-white flex flex-col">
-          <div className="flex-1 flex items-center justify-center bg-gray-100 rounded-t-lg p-8">
+        <div className="border border-border rounded-lg shadow-sm bg-card flex flex-col">
+          <div className="flex-1 flex items-center justify-center bg-muted rounded-t-lg p-8">
             <svg
               width="80"
               height="80"
@@ -30,7 +30,7 @@ export default function ToolPage({ setPage, fileInputRef }) {
               stroke="currentColor"
               strokeWidth="2"
               viewBox="0 0 24 24"
-              className="text-gray-300"
+              className="text-muted-foreground/40"
             >
               <rect x="4" y="4" width="16" height="16" rx="2" />
               <line x1="8" y1="8" x2="16" y2="16" />
@@ -39,16 +39,19 @@ export default function ToolPage({ setPage, fileInputRef }) {
           </div>
           <div className="p-6 space-y-4">
             <h2 className="text-lg font-semibold">Upload Your Video</h2>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.
             </p>
             <div className="flex flex-col md:flex-row gap-4">
-              <Button className="flex-1 cursor-pointer" onClick={handleUploadClick}>
+              <Button
+                className="flex-1 cursor-pointer"
+                onClick={handleUploadClick}
+              >
                 Upload File
               </Button>
               <Button
                 variant="outline"
-                className="flex-1 cursor-pointer"
+                className="flex-1 cursor-pointer text-muted-foreground"
                 onClick={() => setPage("home")}
               >
                 Go Back
@@ -58,8 +61,8 @@ export default function ToolPage({ setPage, fileInputRef }) {
         </div>
 
         {/* Tutorial card */}
-        <div className="border border-gray-200 rounded-lg shadow-sm bg-white flex flex-col">
-          <div className="flex-1 flex items-center justify-center bg-gray-100 rounded-t-lg p-8">
+        <div className="border border-border rounded-lg shadow-sm bg-card flex flex-col">
+          <div className="flex-1 flex items-center justify-center bg-muted rounded-t-lg p-8">
             <svg
               width="80"
               height="80"
@@ -67,7 +70,7 @@ export default function ToolPage({ setPage, fileInputRef }) {
               stroke="currentColor"
               strokeWidth="2"
               viewBox="0 0 24 24"
-              className="text-gray-300"
+              className="text-muted-foreground/40"
             >
               <rect x="4" y="4" width="16" height="16" rx="2" />
               <polygon points="10,8 16,12 10,16" />
@@ -75,7 +78,7 @@ export default function ToolPage({ setPage, fileInputRef }) {
           </div>
           <div className="p-6 space-y-4">
             <h2 className="text-lg font-semibold">How To Use Tutorial</h2>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Egestas elit dui scelerisque ut eu purus aliquam vitae habitasse.
             </p>
           </div>

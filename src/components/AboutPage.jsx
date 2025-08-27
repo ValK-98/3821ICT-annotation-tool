@@ -29,7 +29,7 @@ export default function AboutPage({ setPage }) {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                className="text-gray-300"
+                className="text-muted-foreground/40"
               >
                 {i === 0 && <rect x="3" y="4" width="18" height="18" rx="2" />}
                 {i === 1 && <rect x="4" y="4" width="16" height="16" rx="8" />}
@@ -37,7 +37,7 @@ export default function AboutPage({ setPage }) {
                 {i === 3 && <rect x="3" y="6" width="18" height="12" rx="2" />}
               </svg>
             </div>
-            <p className="text-gray-600 leading-relaxed">{text}</p>
+            <p className="text-muted-foreground leading-relaxed">{text}</p>
           </div>
         ))}
       </div>

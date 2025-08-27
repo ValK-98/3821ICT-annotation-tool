@@ -7,7 +7,7 @@ export default function LandingPage({ setPage }) {
       <h1 className="text-4xl font-bold leading-tight md:text-5xl">
         Purus sagittis fringilla arcu neque.
       </h1>
-      <p className="mt-4 text-base text-gray-600 md:text-2xl">
+      <p className="mt-4 text-base text-muted-foreground md:text-2xl">
         Bibendum amet at molestie mattis.
       </p>
       <div className="mt-8 flex flex-wrap gap-4 justify-center">
@@ -25,7 +25,7 @@ export default function LandingPage({ setPage }) {
           About Us
         </Button>
       </div>
-      <div className="mt-16 w-full max-w-2xl aspect-video rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-center">
+      <div className="mt-16 w-full max-w-2xl aspect-video rounded-xl border border-border bg-muted flex items-center justify-center">
         <svg
           width="64"
           height="64"
@@ -33,7 +33,7 @@ export default function LandingPage({ setPage }) {
           stroke="currentColor"
           strokeWidth="2"
           viewBox="0 0 24 24"
-          className="text-gray-300"
+          className="text-muted-foreground/40"
         >
           <polygon points="8,5 19,12 8,19" />
         </svg>
