@@ -29,8 +29,8 @@ export default function Dashboard() {
         transition={{ duration: 0.5 }}
         className="text-center"
       >
-        <h1 className="uppercase text-3xl font-bold text-blue-600">Dashboard</h1>
-        <p className="text-gray-500 mt-2">Manage your API settings, server health, and model configurations.</p>
+        <h1 className="uppercase text-3xl font-bold text-primary">Dashboard</h1>
+        <p className="text-muted-foreground mt-2">Manage your API settings, server health, and model configurations.</p>
       </motion.header>
 
       {/* Main Grid Layout with staggered animation */}
@@ -42,12 +42,12 @@ export default function Dashboard() {
       >
         {/* Left Column: Model and Fusion Settings */}
         <div className="lg:col-span-2 flex flex-col gap-6">
-          <motion.div variants={itemVariants} className="p-6 border rounded-xl shadow-sm bg-white">
-            <h2 className="text-lg font-semibold text-gray-700 mb-4">Model Settings</h2>
+          <motion.div variants={itemVariants} className="p-6 border rounded-xl shadow-sm bg-card">
+            <h2 className="text-lg font-semibold text-foreground mb-4">Model Settings</h2>
             <ModelSettings />
           </motion.div>
-          <motion.div variants={itemVariants} className="p-6 border rounded-xl shadow-sm bg-white">
-            <h2 className="text-lg font-semibold text-gray-700 mb-4">Fusion Parameters</h2>
+          <motion.div variants={itemVariants} className="p-6 border rounded-xl shadow-sm bg-card">
+            <h2 className="text-lg font-semibold text-foreground mb-4">Fusion Parameters</h2>
             <FusionParamsEditor />
           </motion.div>
         </div>

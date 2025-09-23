@@ -44,7 +44,7 @@ export default function AboutPage({ setPage }) {
       <div className="mt-14 flex justify-center">
         <Button
           className="px-6 py-6 cursor-pointer"
-          onClick={() => setPage("tool")}
+          onClick={() => setPage("label-studio")}
         >
           Use The Tool
         </Button>

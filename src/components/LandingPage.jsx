@@ -13,7 +13,7 @@ export default function LandingPage({ setPage }) {
       <div className="mt-8 flex flex-wrap gap-4 justify-center">
         <Button
           className="px-6 py-6 text-base font-medium cursor-pointer"
-          onClick={() => setPage("tool")}
+          onClick={() => setPage("label-studio")}
         >
           Use The Tool
         </Button>

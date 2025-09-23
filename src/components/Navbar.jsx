@@ -5,7 +5,7 @@ import ToggleSidebarButton from "./ui/ToggleSidebarButton";
 
 export default function Navbar({ setPage, page }) {
   return (
-    <header className="w-full border-b border-border">
+    <header className="w-full border-b border-border bg-background">
       <div className="flex w-full gap-4 items-cente p-4">
         <button
           className="flex items-center gap-2 focus:outline-none cursor-pointer"
@@ -24,7 +24,7 @@ export default function Navbar({ setPage, page }) {
             <a onClick={()=>setPage("dashboard")} className="hover:text-foreground cursor-pointer">
               Dashboard
             </a>
-            <a onClick={()=>setPage("label-studio")} className="hover:text-foreground cursor-pointer">Label studio</a>
+            <a onClick={()=>setPage("label-studio")} className="hover:text-foreground cursor-pointer">Label Studio</a>
             <a onClick={()=>setPage("about")} className="hover:text-foreground cursor-pointer">
               About Us
             </a>
