@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import AbortButton from './ui/AbortButton';
 
 const Sidebar = ({children, bottomChildren}) => {
     return (
@@ -7,7 +6,7 @@ const Sidebar = ({children, bottomChildren}) => {
             id="sidebar"
             className={`
                 h-screen flex flex-col bg-background text-foreground
-                w-[25rem] shadow-lg
+                w-0 shadow-lg
             `}
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
