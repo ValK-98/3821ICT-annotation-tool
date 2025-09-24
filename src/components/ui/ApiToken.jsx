@@ -16,7 +16,6 @@ export function ApiTokenInput({
         fetch("http://localhost:9090/get-labelstudio-key")
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data) {
                     setToken(data);
                     setIsSaved(true);
