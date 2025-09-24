@@ -197,12 +197,13 @@ const ModelSettings = () => {
                         {/* Save Button */}
                         <motion.button
                             variants={variants}
+                            type='button'
                             onClick={handleSave}
                             disabled={isSaving}
-                            className={`w-full py-2 px-4 my-2 rounded-md text-gray-300 font-semibold transition-colors
-                                ${isSaving ? 'bg-gray-500 cursor-not-allowed' : 'bg-sky-800 hover:bg-blue-700 shadow-lg'}
+                            className={`inline-flex mt-4 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-primary text-primary-foreground hover:bg-primary/90
+                                ${isSaving ? 'cursor-not-allowed' : 'shadow-lg'}
                             `}
-                            whileHover={{ scale: isSaving ? 1 : 1.02 }}
+                            whileHover={{ scale: isSaving ? 1 : 1.01 }}
                             whileTap={{ scale: isSaving ? 1 : 0.98 }}
                         >
                             {isSaving ? 'Saving...' : 'Save'}
@@ -274,7 +275,7 @@ const NumberInput = ({ title, param, value, step, min, max, onChange, isSaving, 
                 <label className="text-sm font-medium text-gray-400">{title}</label>
                 {toolTipText && <Tooltip text={toolTipText} />}
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-1 w-full items-center gap-4">
                 <input
                     type="range"
                     step={step}
@@ -282,7 +283,7 @@ const NumberInput = ({ title, param, value, step, min, max, onChange, isSaving, 
                     max={max}
                     value={value}
                     onChange={(e) => onChange(param, parseFloat(e.target.value))}
-                    className="flex-1 cursor-pointer accent-blue-500"
+                    className="flex-1 w-full cursor-pointer accent-blue-500"
                     disabled={isSaving}
                 />
                 <input

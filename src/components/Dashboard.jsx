@@ -41,7 +41,7 @@ export default function Dashboard() {
         animate="show"
       >
         {/* Left Column: Model and Fusion Settings */}
-        <div className="lg:col-span-2 flex flex-col gap-6">
+        <div className="lg:col-span-2  flex flex-col gap-6">
           <motion.div variants={itemVariants} className="p-6 border rounded-xl shadow-sm bg-card">
             <h2 className="text-lg font-semibold text-foreground mb-4">Model Settings</h2>
             <ModelSettings />
@@ -54,14 +54,14 @@ export default function Dashboard() {
 
         {/* Right Column: Auth and Health */}
         <div className="lg:col-span-1 flex flex-col gap-6">
-          <motion.div variants={itemVariants} className="p-6 border rounded-xl shadow-sm bg-white">
-            <h2 className="text-lg font-semibold text-gray-700 mb-2">Authentication</h2>
-            <p className="text-sm text-gray-500 mb-4">Secure your dashboard with an API token.</p>
+          <motion.div variants={itemVariants} className="p-6 border rounded-xl shadow-sm bg-card">
+            <h2 className="text-lg font-semibold text-foreground mb-2">Authentication</h2>
+            <p className="text-sm text-muted-foreground mb-4">Secure your dashboard with an API token.</p>
             <ApiTokenInput />
           </motion.div>
-          <motion.div variants={itemVariants} className="p-6 border rounded-xl shadow-sm bg-white">
-            <h2 className="text-lg font-semibold text-gray-700 mb-2">Server Health</h2>
-            <p className="text-sm text-gray-500 mb-4">Check the status of the server.</p>
+          <motion.div variants={itemVariants} className="p-6 border rounded-xl shadow-sm bg-card">
+            <h2 className="text-lg font-semibold text-foreground mb-2">Server Health</h2>
+            <p className="text-sm text-muted-foreground mb-4">Check the status of the server.</p>
             <HealthStatusIndicator interval={12000} />
           </motion.div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Key, Check, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Tooltip from './Tooltip';
 
 export function ApiTokenInput({
     placeholder = "Enter your API token here...",
@@ -99,6 +100,7 @@ export function ApiTokenInput({
                     <label htmlFor="api-token" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                         {label}
                     </label>
+                    <Tooltip text={"This token can be found in labelstudio > account settings > personal access token"}/>
                 </div>
                 <p className="text-sm text-muted-foreground">{description}</p>
             </div>
@@ -120,7 +122,7 @@ export function ApiTokenInput({
                             className="px-3 py-2 hover:bg-muted/50 rounded-sm focus:outline-none text-muted-foreground hover:text-destructive transition-colors"
                             onClick={handleDelete}
                             title="Delete token"
-                            whileHover={{ scale: 1.1 }}
+                            whileHover={{ scale: 3 }}
                             whileTap={{ scale: 0.9 }}
                         >
                             <X className="w-4 h-4" />
@@ -140,7 +142,7 @@ export function ApiTokenInput({
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        whileHover={{ scale: 1.02 }}
+                        whileHover={{ scale: 1.04 }}
                         whileTap={{ scale: 0.98 }}
                     >
                         Save Token

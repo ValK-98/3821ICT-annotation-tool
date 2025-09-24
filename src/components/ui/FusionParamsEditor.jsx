@@ -184,13 +184,13 @@ const FusionParamsEditor = () => {
                             variants={itemVariants}
                             onClick={handleSave}
                             disabled={saving}
-                            className={`w-full py-2 px-4 my-2 rounded-md text-gray-300 font-semibold transition-colors
-                                ${saving ? 'bg-gray-500 cursor-not-allowed' : 'bg-sky-800 hover:bg-blue-700 shadow-lg'}
+                            className={`inline-flex mt-4 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 w-full bg-primary text-primary-foreground hover:bg-primary/90
+                                ${saving ? 'bg-gray-500 cursor-not-allowed' : ' shadow-lg'}
                             `}
-                            whileHover={{ scale: saving ? 1 : 1.02 }}
+                            whileHover={{ scale: saving ? 1 : 1.01 }}
                             whileTap={{ scale: saving ? 1 : 0.98 }}
                         >
-                            {saving ? "Saving..." : "Save Changes"}
+                            {saving ? "Saving..." : "Save"}
                         </motion.button>
                         <AnimatePresence>
                             {status && (
@@ -239,7 +239,7 @@ const NumberInput = ({
                 <label className="text-sm font-medium text-gray-400">{title}</label>
                 {toolTipText && <Tooltip text={toolTipText} />}
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex w-full flex-1 items-center gap-4">
                 {isRange && (
                     <input
                         type="range"
@@ -248,7 +248,7 @@ const NumberInput = ({
                         max={max}
                         value={value}
                         onChange={(e) => onChange(param, parseFloat(e.target.value))}
-                        className="flex-1 cursor-pointer accent-blue-500"
+                        className="flex-1 w-full cursor-pointer accent-blue-500"
                         disabled={isSaving}
                     />
                 )}
@@ -259,7 +259,7 @@ const NumberInput = ({
                     max={max}
                     value={value}
                     onChange={(e) => onChange(param, parseFloat(e.target.value))}
-                    className={`w-20 px-2 py-1 border border-gray-600 rounded-md bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 ${!isRange && "w-full"
+                    className={`w-20 px-2 py-1 border border-gray-600 rounded-md bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-blue-500 ${!isRange && "w-full"
                         }`}
                     disabled={isSaving}
                 />
