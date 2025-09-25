@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { RotateCwIcon } from "lucide-react";
 import Tooltip from "./Tooltip";
 
 const FusionParamsEditor = () => {
@@ -22,6 +23,8 @@ const FusionParamsEditor = () => {
                 const data = await res.json();
                 
                 // Set the current values from the 'params' object
+                console.log(data.params)
+                console.log(data.limits)
                 setParams(data.params);
                 // Set the limits for the inputs
                 setParamLimits(data.limits);
@@ -40,7 +43,9 @@ const FusionParamsEditor = () => {
     const handleChange = (key, value) => {
         setParams((prev) => ({ ...prev, [key]: value }));
     };
-
+    const handleReset= () =>{
+        setParams({audio_bias : 1.0, video_bias : 1.0, beta: 0.8, floor_prob:1e-6, fps:30, min_duration:0.5, debug:false});
+    }
     const handleSave = async () => {
         setSaving(true);
         setStatus("Saving changes...");
@@ -76,9 +81,18 @@ const FusionParamsEditor = () => {
     };
 
     return (
-        <div className="p-4 bg-accent rounded-xl text-foreground w-full flex flex-col gap-6">
+        <div className="p-4 relative bg-accent rounded-xl text-foreground w-full flex flex-col gap-6">
             <h2 className="text-xl font-semibold mb-2">Fusion Parameters</h2>
-
+            <button
+                onClick={handleReset}
+                disabled={saving}
+                className={`absolute flex gap-2 right-0 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 text-secondary-foreground hover:bg-secondary/90
+                    ${saving ? 'cursor-not-allowed' : ''}
+                `}
+            >
+                <RotateCwIcon/>
+                <Tooltip text={"Please save after resetting"}></Tooltip>
+            </button>
             <AnimatePresence mode="wait">
                 {loading && (
                     <motion.p
@@ -145,6 +159,29 @@ const FusionParamsEditor = () => {
                                 step={1}
                                 min={paramLimits.fps[0]}
                                 max={paramLimits.fps[1]}
+                                onChange={handleChange}
+                                isSaving={saving}
+                            />
+
+                            <NumberInput
+                                title="Video bias"
+                                toolTipText="Affects the weight of video(frame based results on the fusion engine)"
+                                param="video_bias"
+                                value={params.video_bias}
+                                step={1}
+                                min={paramLimits.video_bias[0]}
+                                max={paramLimits.video_bias[1]}
+                                onChange={handleChange}
+                                isSaving={saving}
+                            />
+                            <NumberInput
+                                title="Audio bias"
+                                toolTipText="Affects the weight of video(frame based results on the fusion engine)"
+                                param="audio_bias"
+                                value={params.audio_bias}
+                                step={1}
+                                min={paramLimits.audio_bias[0]}
+                                max={paramLimits.audio_bias[1]}
                                 onChange={handleChange}
                                 isSaving={saving}
                             />
@@ -238,6 +275,7 @@ const NumberInput = ({
             <div className="flex items-center justify-between mb-1">
                 <label className="text-sm font-medium text-gray-400">{title}</label>
                 {toolTipText && <Tooltip text={toolTipText} />}
+
             </div>
             <div className="flex w-full flex-1 items-center gap-4">
                 {isRange && (

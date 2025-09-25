@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Tooltip from './Tooltip';
+import { RotateCwIcon } from 'lucide-react';
 
 const ModelSettings = () => {
     const [availableModels, setAvailableModels] = useState({
@@ -54,6 +55,10 @@ const ModelSettings = () => {
         setParameters(prev => ({ ...prev, [param]: value }));
     };
 
+    const handleReset= (param, value) =>{
+        setParameters({emotion_conf :0.5, face_conf: 0.75, frame_step:10, segment_duration:0.5});
+    }
+
     const handleSave = async () => {
         setIsSaving(true);
         setStatus('Saving models and parameters...');
@@ -83,9 +88,20 @@ const ModelSettings = () => {
     };
 
     return (
-        <div className="p-4 bg-accent rounded-xl text-foreground w-full flex flex-col gap-6">
+        <div className="p-4 bg-accent relative rounded-xl text-foreground w-full flex flex-col gap-6">
             <h2 className="text-xl font-semibold mb-4">Model & Parameter Settings</h2>
-
+                <button
+                onClick={handleReset}
+                disabled={isSaving}
+                className={`absolute flex gap-2 right-0 items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 py-2 text-secondary-foreground hover:bg-secondary/90
+                    ${isSaving ? 'cursor-not-allowed' : ''}
+                `}
+                whileHover={{ scale: isSaving ? 1 : 1.01 }}
+                whileTap={{ scale: isSaving ? 1 : 0.98 }}
+            >
+                <RotateCwIcon/>
+                <Tooltip text={"Please save after resetting"}></Tooltip>
+                </button>
             <AnimatePresence mode="wait">
                 {loading ? (
                     <motion.div
@@ -114,6 +130,7 @@ const ModelSettings = () => {
                             }
                         }}
                     >
+
                         {/* Model dropdowns */}
                         <motion.div variants={variants} className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <Dropdown
@@ -208,6 +225,8 @@ const ModelSettings = () => {
                         >
                             {isSaving ? 'Saving...' : 'Save'}
                         </motion.button>
+
+                    
 
                         {/* Status Message */}
                         <AnimatePresence>
